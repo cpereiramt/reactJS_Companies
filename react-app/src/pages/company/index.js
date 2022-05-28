@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { getNumberByCompanyID } from "../../services/numbers";
 import BackButton from "../../components/buttonBack";
-import { Link } from "react-router-dom";
+import Table from "../../components/table";
 
 const Company = () => {
   const [numberByCompanyID, setSelectedCompany] = useState([]);
   const location = useLocation();
-  const companyID = location.state.companyID;
+  const companyID = location.state.stateData;
   useEffect(() => {
     getNumberByCompanyID(companyID).then((data) => setSelectedCompany(data));
   }, [companyID]);
@@ -15,7 +15,17 @@ const Company = () => {
   return (
     <>
       <BackButton />
-      <table>
+      {numberByCompanyID.length > 0 && (
+        <Table
+          data={numberByCompanyID}
+          headers={["Id", "Type"]}
+          rowKey={"id"}
+          columnWithLink="id"
+          urlParams="id"
+          linkPath="/number/"
+        />
+      )}
+      {/* <table>
         <thead>
           <tr>
             <th>Number</th>
@@ -37,7 +47,7 @@ const Company = () => {
             </tr>
           ))}
         </tbody>
-      </table>
+      </table> */}
     </>
   );
 };

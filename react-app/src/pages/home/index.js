@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getAllCompanies } from "../../services/companies";
-import { Link } from "react-router-dom";
+import Table from "../../components/table";
 const Home = () => {
   const [companies, setCompanies] = useState([]);
   useEffect(() => {
@@ -8,30 +8,16 @@ const Home = () => {
   }, []);
 
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Vatin</th>
-        </tr>
-      </thead>
-      <tbody>
-        {companies.map((company) => (
-          <tr key={company.vatin}>
-            <td>
-              <Link
-                to={`/company/${company.id}`}
-                state={{ companyID: company.id }}
-              >
-                {company.name}
-              </Link>
-            </td>
-
-            <td>{company.vatin}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+    companies.length > 0 && (
+      <Table
+        data={companies}
+        headers={["Name", "Vatin"]}
+        rowKey={"vatin"}
+        columnWithLink="name"
+        urlParams="id"
+        linkPath="/company/"
+      />
+    )
   );
 };
 

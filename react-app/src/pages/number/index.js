@@ -5,7 +5,7 @@ import BackButton from "../../components/buttonBack";
 
 const Number = () => {
   const location = useLocation();
-  const numberID = location.state.numberID;
+  const numberID = location.state.stateData;
   const [selectedNumber, setSelectedNumber] = useState([]);
   useEffect(() => {
     getNumberByNumberID(numberID).then((data) => setSelectedNumber(data));
