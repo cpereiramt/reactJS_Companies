@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getAllCompanies } from "../../services/companies";
-
+import { Link } from "react-router-dom";
 const Home = () => {
   const [companies, setCompanies] = useState([]);
   useEffect(() => {
@@ -18,7 +18,15 @@ const Home = () => {
       <tbody>
         {companies.map((company) => (
           <tr key={company.vatin}>
-            <td>{company.name}</td>
+            <td>
+              <Link
+                to={`/companies/${company.id}`}
+                state={{ companyID: company.id }}
+              >
+                {company.name}
+              </Link>
+            </td>
+
             <td>{company.vatin}</td>
           </tr>
         ))}

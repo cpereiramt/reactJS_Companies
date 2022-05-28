@@ -11,8 +11,8 @@ const Routes = () => {
     <BrowserRouter>
       <Rts>
         <Route element={<Home />} path="/" />
-        <Route element={<Company />} path="/company/:companyId" />
-        <Route element={<Number />} path="/number/:numberId" />
+        <Route element={<Company />} path="/companies/:companyId" />
+        <Route element={<Number />} path="/numbers/:numberId" />
         <Route element={<NotFound />} path="*" />
       </Rts>
     </BrowserRouter>
