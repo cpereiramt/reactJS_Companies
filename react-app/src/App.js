@@ -1,7 +1,20 @@
 import "./App.css";
+import { useState } from "react";
 import Routes from "./utils/routes";
+import GlobalStyle from "./styles/globalstyle";
+import { lightTheme, darkTheme } from "./styles/theme";
+import ButtonSetTheme from "./components/buttonSetTheme";
+
+import { ThemeProvider } from "styled-components";
 function App() {
-  return <Routes />;
+  const [theme, setTheme] = useState(lightTheme);
+  return (
+    <ThemeProvider theme={theme === darkTheme ? darkTheme : lightTheme}>
+      <ButtonSetTheme setThemeFunction={setTheme} theme={theme} />
+      <GlobalStyle />
+      <Routes />
+    </ThemeProvider>
+  );
 }
 
 export default App;
