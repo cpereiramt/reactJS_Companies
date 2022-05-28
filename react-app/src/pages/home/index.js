@@ -20,7 +20,7 @@ const Home = () => {
           <tr key={company.vatin}>
             <td>
               <Link
-                to={`/companies/${company.id}`}
+                to={`/company/${company.id}`}
                 state={{ companyID: company.id }}
               >
                 {company.name}

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { getNumberByNumberID } from "../../services/numbers";
 import { useLocation } from "react-router-dom";
+import BackButton from "../../components/buttonBack";
+
 const Number = () => {
   const location = useLocation();
   const numberID = location.state.numberID;
@@ -11,6 +13,7 @@ const Number = () => {
 
   return (
     <div>
+      <BackButton />
       <h1>{selectedNumber.id}</h1>
       <h2>{selectedNumber.type}</h2>
     </div>
