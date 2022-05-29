@@ -14,7 +14,10 @@ const Company = () => {
 
   return (
     <>
-      <BackButton />
+      <div style={{ display: "flex", width: "75vw" }}>
+        <BackButton style={{ position: "absolute" }} />
+      </div>
+      <h1>Local Public Office</h1>
       {numberByCompanyID.length > 0 && (
         <Table
           data={numberByCompanyID}

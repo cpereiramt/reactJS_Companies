@@ -13,7 +13,9 @@ const Number = () => {
 
   return (
     <div>
-      <BackButton />
+      <div style={{ display: "flex", width: "75vw" }}>
+        <BackButton style={{ position: "absolute" }} />
+      </div>
       <h1>{selectedNumber.id}</h1>
       <h2>{selectedNumber.type}</h2>
     </div>
