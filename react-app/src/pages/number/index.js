@@ -5,7 +5,7 @@ import BackButton from "../../components/buttonBack";
 import { DivAccent } from "./style";
 const Number = () => {
   const location = useLocation();
-  const numberID = location.state.stateData;
+  const numberID = location.state ? location.state.stateData : null;
   const [selectedNumber, setSelectedNumber] = useState([]);
   useEffect(() => {
     getNumberByNumberID(numberID).then((data) => setSelectedNumber(data));
@@ -13,14 +13,26 @@ const Number = () => {
 
   return (
     <>
-      <div style={{ display: "flex", width: "75vw" }}>
-        <BackButton style={{ position: "absolute" }} />
-      </div>
-      <DivAccent>
-        <h1>{selectedNumber.id}</h1>
+      {numberID !== null && (
+        <>
+          <div style={{ display: "flex", width: "75vw" }}>
+            <BackButton style={{ position: "absolute" }} />
+          </div>
+          <DivAccent>
+            <h1>{selectedNumber.id}</h1>
 
-        <h2>{selectedNumber.type}</h2>
-      </DivAccent>
+            <h2>{selectedNumber.type}</h2>
+          </DivAccent>
+        </>
+      )}
+      {numberID === null && (
+        <>
+          <div style={{ display: "flex", width: "75vw" }}>
+            <BackButton style={{ position: "absolute" }} />
+          </div>
+          <h2>No Data to Show ! </h2>
+        </>
+      )}
     </>
   );
 };

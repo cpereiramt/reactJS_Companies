@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Navigate } from "react-router-dom";
 import { getNumberByCompanyID } from "../../services/numbers";
 import BackButton from "../../components/buttonBack";
 import Table from "../../components/table";
@@ -7,7 +7,7 @@ import Table from "../../components/table";
 const Company = () => {
   const [numberByCompanyID, setSelectedCompany] = useState([]);
   const location = useLocation();
-  const companyID = location.state.stateData;
+  const companyID = location.state ? location.state.stateData : null;
   useEffect(() => {
     getNumberByCompanyID(companyID).then((data) => setSelectedCompany(data));
   }, [companyID]);
