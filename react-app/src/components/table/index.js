@@ -1,5 +1,6 @@
 import React, { useId } from "react";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 import {
   TableWrapper,
   TableEl,
@@ -62,5 +63,11 @@ const Table = ({ headers, data, columnWithLink, urlParams, linkPath }) => {
     </TableWrapper>
   );
 };
-
+Table.propTypes = {
+  headers: PropTypes.array.isRequired,
+  data: PropTypes.array.isRequired,
+  columnWithLink: PropTypes.string.isRequired,
+  urlParams: PropTypes.string.isRequired,
+  linkPath: PropTypes.string.isRequired,
+};
 export default Table;
