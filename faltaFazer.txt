@@ -1,0 +1,4 @@
+- Para amanhã, implementar os testes unitários
+- e ajustar a documentação para incluir o passo a passo para executar o projeto ReactJS
+- se der tempo estilizar a pagina de 404 
+- https://www.freepik.com/free-photos-vectors/404-page
