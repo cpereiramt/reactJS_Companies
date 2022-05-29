@@ -6,14 +6,14 @@ export const WrapperDiv = styled.div`
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: ${(props) => props.theme.accent};
+  background: transparent;
   margin: auto;
   width: 100%;
   padding: 10px;
   text-align: center;
   @media (min-width: 800px) {
     height: 500px;
-    background: ${(props) => props.theme.accent};
+    background: transparent;
     margin: 10% auto;
     width: 50%;
   }
