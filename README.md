@@ -51,3 +51,16 @@ npm run api
 ```
 
 You should then have the API running in http://localhost:3000.
+
+## REACT APP
+To run the react app change directory to `/react-app` and run the following commands:
+
+
+```bash
+npm i
+```
+
+```bash
+npm start
+```
+And then you can access it on `http://localhost:4000`
