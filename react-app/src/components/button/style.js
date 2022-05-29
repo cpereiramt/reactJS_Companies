@@ -12,4 +12,6 @@ export const ButtonEl = styled.button`
   margin: 10px;
   padding: 20px;
   font-size: 1.4rem;
+  &:hover {
+    transform: scale(1.1);
 `;
