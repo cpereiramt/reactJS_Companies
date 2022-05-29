@@ -15,6 +15,6 @@ export const WrapperDiv = styled.div`
     height: 500px;
     background: transparent;
     margin: 10% auto;
-    width: 50%;
+    width: 85%;
   }
 `;
