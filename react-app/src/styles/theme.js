@@ -7,6 +7,8 @@ export const lightTheme = {
   tableHead: "black",
   tableHeadText: "rgba(245, 245, 245, 1)",
   link: "rgba(50, 12, 250, 0.80)",
+  buttonBackground: "rgba(0, 0, 250, 1)",
+  buttonText: "#D6E1DF",
 };
 
 export const darkTheme = {
@@ -18,4 +20,6 @@ export const darkTheme = {
   tableHead: "rgba(248, 18, 144, 0.31)",
   tableHeadText: "rgba(245, 245, 245, 1)",
   link: "rgba(50, 200, 5, 1)",
+  buttonBackground: "rgba(150, 7, 120, 1)",
+  buttonText: "#D6E1DF",
 };

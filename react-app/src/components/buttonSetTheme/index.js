@@ -1,6 +1,6 @@
 import React from "react";
 import { lightTheme, darkTheme } from "../../styles/theme";
-
+import Button from "../button";
 const ButtonSetTheme = ({ setThemeFunction, theme }) => {
   const setTheme = () => {
     if (theme === lightTheme) {
@@ -12,7 +12,7 @@ const ButtonSetTheme = ({ setThemeFunction, theme }) => {
       setThemeFunction(lightTheme);
     }
   };
-  return <button onClick={() => setTheme()}>ButtonSetTheme</button>;
+  return <Button clickEvent={() => setTheme()} label="Toggle Theme" />;
 };
 
 export default ButtonSetTheme;
